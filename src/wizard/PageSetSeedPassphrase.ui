@@ -45,7 +45,21 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="linePassphrase"/>
+    <widget class="QLineEdit" name="linePassphrase">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="check_hidePassphrase">
+     <property name="text">
+      <string>Hide passphrase</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_4">
