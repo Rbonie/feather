@@ -1,40 +1,46 @@
 ```
-# Android build outputs
-*.apk
-*.aar
-*.so
-*.dex
-
-# Android build directories
+# Build artifacts
 build/
+dist/
+*.o
+*.obj
+*.so
+*.a
+*.dylib
+*.dll
+
+# Android specific
 .gradle/
 local.properties
 captures/
+*.keystore
+*.apk
+*.aar
 
-# Android Studio
-.idea/
-*.iml
-*.iws
-out/
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+target/
 
-# Gradle
-.gradle/
-!gradle.properties
-!gradlew
-!gradlew.bat
-
-# CMake
-cmake_build/
-.externalNativeBuild/
-
-# JNI
-obj/
-.libs/
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
-# OS generated files
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# System files
 .DS_Store
 Thumbs.db
 ```

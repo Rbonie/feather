@@ -25,6 +25,7 @@ target_link_libraries(feather_wallet_jni
     android
     log
     ${JNI_LIBRARIES}
+    dl
 )
 
 # Compiler flags
@@ -32,4 +33,20 @@ target_compile_options(feather_wallet_jni PRIVATE
     -Wall
     -Wextra
     -fPIC
+    -std=c++17
 )
+
+# Optional: Link against pre-built Monero wallet library if available
+# Uncomment these lines when you have built the Monero libraries
+# set(MONERO_LIB_DIR ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${CMAKE_ANDROID_ARCH_ABI})
+# if(EXISTS ${MONERO_LIB_DIR}/libmonero_wallet.so)
+#     target_link_libraries(feather_wallet_jni
+#         ${MONERO_LIB_DIR}/libmonero_wallet.so
+#     )
+#     target_include_directories(feather_wallet_jni PRIVATE
+#         ${CMAKE_SOURCE_DIR}/src/main/cpp/monero/include
+#     )
+#     message(STATUS "Linking against pre-built Monero wallet library")
+# else()
+#     message(STATUS "Monero wallet library not found - building in stub mode")
+# endif()
