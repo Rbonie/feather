@@ -1,25 +1,40 @@
-.DS_Store
-lib/*
-cmake-build-debug/*
-cmake-build-release/*
-.idea
-*.user
-*.stash
-build/*
-CMakeCache.txt
-CMakeFiles
-cmake_install.cmake
-feather_autogen/
-feather.cbp
-src/assets_tor.qrc
-src/assets_docs.qrc
-feather.AppDir/*
-src/assets/tor/*
-src/assets/docs/*
-!src/assets/tor/.gitkeep
-!src/assets/docs/.gitkeep
-contrib/installers/windows/setup.nsi
-githash.txt
+```
+# Android build outputs
+*.apk
+*.aar
+*.so
+*.dex
 
-# guix
-/guix
+# Android build directories
+build/
+.gradle/
+local.properties
+captures/
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+out/
+
+# Gradle
+.gradle/
+!gradle.properties
+!gradlew
+!gradlew.bat
+
+# CMake
+cmake_build/
+.externalNativeBuild/
+
+# JNI
+obj/
+.libs/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+```
