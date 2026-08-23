@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Feather Wallet</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Feather Wallet</string>
+    <string name="welcome_subtitle">A lightweight Monero wallet</string>
+    <string name="welcome_tagline">Secure • Private • Decentralized</string>
+    <string name="create_wallet">Create New Wallet</string>
+    <string name="restore_wallet">Restore from Seed</string>
+    <string name="open_wallet">Open Existing Wallet</string>
+    
+    <!-- Create Wallet -->
+    <string name="create_wallet_title">Create New Wallet</string>
+    <string name="wallet_name">Wallet Name</string>
+    <string name="wallet_password">Password</string>
+    <string name="wallet_password_confirm">Confirm Password</string>
+    <string name="generate_seed">Generate Seed</string>
+    <string name="seed_phrase">Seed Phrase</string>
+    <string name="seed_warning">Write down your seed phrase and store it in a safe place. This is the only way to recover your wallet!</string>
+    
+    <!-- Restore Wallet -->
+    <string name="restore_wallet_title">Restore Wallet</string>
+    <string name="enter_seed">Enter Seed Phrase</string>
+    <string name="seed_language">Seed Language</string>
+    <string name="restore_height">Restore Height (optional)</string>
+    
+    <!-- Login -->
+    <string name="login_title">Open Wallet</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="unlock">Unlock</string>
+    
+    <!-- Main Screen -->
+    <string name="tab_send">Send</string>
+    <string name="tab_receive">Receive</string>
+    <string name="tab_history">History</string>
+    <string name="tab_coins">Coins</string>
+    <string name="tab_settings">Settings</string>
+    
+    <!-- Send -->
+    <string name="send_title">Send XMR</string>
+    <string name="recipient_address">Recipient Address</string>
+    <string name="amount">Amount</string>
+    <string name="fee_level">Fee Level</string>
+    <string name="description">Description (optional)</string>
+    <string name="send_all">Send All</string>
+    <string name="review_transaction">Review Transaction</string>
+    <string name="confirm_send">Confirm and Send</string>
+    
+    <!-- Receive -->
+    <string name="receive_title">Receive XMR</string>
+    <string name="your_address">Your Address</string>
+    <string name="share_address">Share Address</string>
+    <string name="create_subaddress">Create Subaddress</string>
+    <string name="subaddress_label">Subaddress Label</string>
+    
+    <!-- History -->
+    <string name="history_title">Transaction History</string>
+    <string name="no_transactions">No transactions yet</string>
+    <string name="transaction_details">Transaction Details</string>
+    
+    <!-- Coins -->
+    <string name="coins_title">Unspent Outputs</string>
+    <string name="freeze_output">Freeze</string>
+    <string name="unfreeze_output">Unfreeze</string>
+    <string name="sweep_output">Sweep</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="network_settings">Network</string>
+    <string name="daemon_address">Daemon Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="backup_wallet">Backup Wallet</string>
+    <string name="view_seed">View Seed Phrase</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied!</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+</resources>
