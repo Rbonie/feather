@@ -1,5 +1,7 @@
 package org.monero.feather.data.local
 
+import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -8,7 +10,9 @@ import javax.inject.Singleton
  * This class provides the interface between Kotlin/Java and the native C++ wallet implementation.
  */
 @Singleton
-class WalletLibrary @Inject constructor() {
+class WalletLibrary @Inject constructor(
+    @ApplicationContext private val context: Context
+) {
 
     init {
         System.loadLibrary("feather_wallet_jni")
@@ -20,6 +24,11 @@ class WalletLibrary @Inject constructor() {
      * @return true if initialization successful, false otherwise
      */
     external fun initializeLibrary(dataDir: String): Boolean
+
+    /**
+     * Cleanup and unload the library (call on app termination)
+     */
+    external fun cleanupLibrary()
 
     /**
      * Check if a wallet exists at the given path
@@ -152,9 +161,57 @@ class WalletLibrary @Inject constructor() {
         newPassword: String
     ): Boolean
 
+    /**
+     * Send a transaction
+     * @param walletHandle Handle to the wallet
+     * @param address Destination address
+     * @param amount Amount in piconero
+     * @param mixin Ring size (number of decoys + 1)
+     * @param paymentId Optional payment ID
+     * @param description Optional description
+     * @return Transaction ID on success, empty string on failure
+     */
+    external fun sendTransaction(
+        walletHandle: Long,
+        address: String,
+        amount: Long,
+        mixin: Int = 16,
+        paymentId: String?,
+        description: String?
+    ): String
+
+    /**
+     * Get transaction history as JSON array
+     * @param walletHandle Handle to the wallet
+     * @return JSON array of transactions
+     */
+    external fun getTransactionHistoryJson(walletHandle: Long): String
+
+    /**
+     * Get wallet status code
+     * @param walletHandle Handle to the wallet
+     * @return Status code (0 = OK, negative values indicate errors)
+     */
+    external fun getStatus(walletHandle: Long): Int
+
+    /**
+     * Get last error message
+     * @param walletHandle Handle to the wallet
+     * @return Error message string
+     */
+    external fun getLastError(walletHandle: Long): String
+
     companion object {
         const val NETWORK_TYPE_MAINNET = 0
         const val NETWORK_TYPE_TESTNET = 1
         const val NETWORK_TYPE_STAGENET = 2
+        
+        // Status codes
+        const val STATUS_OK = 0
+        const val STATUS_ERROR = 1
+        const val STATUS_CRITICAL = 2
+        
+        // Default mixin (ring size)
+        const val DEFAULT_MIXIN = 16
     }
 }
