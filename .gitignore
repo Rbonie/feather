@@ -1,6 +1,15 @@
 ```
 # Android build outputs
 build/
+dist/
+*.o
+*.obj
+*.so
+*.a
+*.dylib
+*.dll
+
+# Android specific
 .gradle/
 */build/
 
@@ -9,6 +18,8 @@ build/
 *.iml
 *.iws
 *.log
+*.tmp
+*.swp
 
 # Android specific
 local.properties
