@@ -1,5 +1,5 @@
 ```
-# Build artifacts
+# Android build outputs
 build/
 dist/
 *.o
@@ -11,36 +11,42 @@ dist/
 
 # Android specific
 .gradle/
-local.properties
-captures/
-*.keystore
-*.apk
-*.aar
+*/build/
 
-# Dependencies
-node_modules/
-.venv/
-venv/
-__pycache__/
-.mypy_cache/
-.pytest_cache/
-target/
-
-# Logs and temp files
+# Android studio files
+.idea/
+*.iml
+*.iws
 *.log
 *.tmp
 *.swp
 
+# Android specific
+local.properties
+captures/
+*.keystore
+*.apk
+*.aab
+
+# Kotlin
+*.kotlin_metadata
+
+# C++/JNI
+*.so
+*.dylib
+*.dll
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
-# Editors
-.vscode/
-.idea/
-
-# System files
+# OS generated files
 .DS_Store
 Thumbs.db
 ```
