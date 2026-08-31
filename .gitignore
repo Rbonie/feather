@@ -1,52 +1,55 @@
 ```
-# Android build outputs
-build/
-dist/
+# Compiled and build artifacts
+*.class
 *.o
 *.obj
+*.exe
+*.dll
 *.so
 *.a
-*.dylib
-*.dll
+*.out
+
+# Dependencies
+node_modules/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+target/
+.gradle/
+
+# Build directories
+build/
+dist/
 
 # Android specific
+*.apk
+*.aar
+*.dex
+local.properties
 .gradle/
-*/build/
-
-# Android studio files
 .idea/
 *.iml
-*.iws
+
+# Logs and temp files
 *.log
 *.tmp
 *.swp
 
-# Android specific
-local.properties
-captures/
-*.keystore
-*.apk
-*.aab
-
-# Kotlin
-*.kotlin_metadata
-
-# C++/JNI
-*.so
-*.dylib
-*.dll
-
-# Temporary files
-*.tmp
-*.swp
-*~
-
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
-# OS generated files
+# Editors
+.vscode/
+.idea/
+
+# System files
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
 ```
