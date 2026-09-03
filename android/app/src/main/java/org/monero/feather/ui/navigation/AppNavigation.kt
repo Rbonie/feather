@@ -16,6 +16,7 @@ import org.monero.feather.ui.screens.main.receive.ReceiveScreen
 import org.monero.feather.ui.screens.main.history.HistoryScreen
 import org.monero.feather.ui.screens.main.settings.SettingsScreen
 import org.monero.feather.ui.screens.main.coins.CoinsScreen
+import org.monero.feather.presentation.settings.SettingsScreen as NewSettingsScreen
 
 @Composable
 fun AppNavigation(
@@ -131,25 +132,8 @@ fun AppNavigation(
         }
         
         composable(Screen.Settings.route) {
-            SettingsScreen(
-                onNavigateBack = { navController.popBackStack() },
-                onLockWallet = {
-                    navController.navigate(Screen.Login.route) {
-                        popUpTo(Screen.Main.route) { inclusive = true }
-                    }
-                },
-                onBackupWallet = {
-                    // TODO: Backup wallet
-                },
-                onChangePassword = {
-                    // TODO: Change password
-                },
-                onNodesSettings = {
-                    // TODO: Node settings
-                },
-                onAboutApp = {
-                    // TODO: About app
-                }
+            NewSettingsScreen(
+                onNavigateBack = { navController.popBackStack() }
             )
         }
         
