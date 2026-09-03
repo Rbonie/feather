@@ -33,7 +33,7 @@ out/
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Temporary files
 *.tmp
